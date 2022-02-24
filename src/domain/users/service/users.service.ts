@@ -22,10 +22,10 @@ export class UsersService {
         await this.repo.save(data);
         return user;
     }
-
+    
+    //TODO: Revisar implementação
     async findByEmail(email: string) {
         return await this.repo.findOne({ email: email });
-
     }
 
     async read(id: number) {

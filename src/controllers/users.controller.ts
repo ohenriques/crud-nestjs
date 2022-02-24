@@ -38,6 +38,7 @@ export class UsersController {
             data,
         };
     }
+    //TODO: Revisar implementação
     @Get(':email')
     async readUserByEmail(@Param('email') email: string) {
         const data = await this.usersService.findByEmail(email);
