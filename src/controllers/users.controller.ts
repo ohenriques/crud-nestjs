@@ -5,18 +5,13 @@ import { UsersDTO } from '../domain/users/dto/users.dto';
 import { UsersService } from '../domain/users/service/users.service';
 
 
-@Controller('users')
+@Controller()
 export class UsersController {
     constructor(private usersService: UsersService) { }
 
     @Get()
     async showAllUsers() {
-        const users = await this.usersService.showAll();
-        return {
-            statusCode: HttpStatus.OK,
-            message: 'Users buscado com Sucesso!',
-            users
-        };
+        return this.usersService.showAll();
     }
 
     @Post()
