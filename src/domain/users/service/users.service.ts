@@ -13,8 +13,8 @@ export class UsersService {
 
     }
 
-    async showAll() {
-        return await this.repo.find();
+    showAll(): string {
+        return 'Hello World!';
     }
 
     async create(data: UsersDTO) {
@@ -22,7 +22,7 @@ export class UsersService {
         await this.repo.save(data);
         return user;
     }
-    
+
     //TODO: Revisar implementação
     async findByEmail(email: string) {
         return await this.repo.findOne({ email: email });
